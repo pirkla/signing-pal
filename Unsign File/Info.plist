@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Sign File</string>
+	<string>Unsign File</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
@@ -52,9 +52,9 @@
 			<string>NSActionTemplate</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.ui-services</string>
+		<string>com.apple.services</string>
 		<key>NSExtensionPrincipalClass</key>
-		<string>$(PRODUCT_MODULE_NAME).ActionViewController</string>
+		<string>$(PRODUCT_MODULE_NAME).ActionRequestHandler</string>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2020 Pirklator. All rights reserved.</string>
