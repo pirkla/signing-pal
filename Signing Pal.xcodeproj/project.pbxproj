@@ -11,7 +11,55 @@
 		710C7FAB248876320083B63A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FAA248876320083B63A /* ViewController.swift */; };
 		710C7FAD248876330083B63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710C7FAC248876330083B63A /* Assets.xcassets */; };
 		710C7FB0248876330083B63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710C7FAE248876330083B63A /* Main.storyboard */; };
+		710C7FBF2488764D0083B63A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710C7FBE2488764D0083B63A /* Media.xcassets */; };
+		710C7FC12488764D0083B63A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 710C7FC02488764D0083B63A /* icon.icns */; };
+		710C7FC32488764D0083B63A /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FC22488764D0083B63A /* ActionViewController.swift */; };
+		710C7FC62488764D0083B63A /* ActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 710C7FC42488764D0083B63A /* ActionViewController.xib */; };
+		710C7FCB2488764D0083B63A /* Sign File.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 710C7FBC2488764D0083B63A /* Sign File.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		710C7FE9248876820083B63A /* SecurityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FE8248876820083B63A /* SecurityWrapper.swift */; };
+		710C7FEC2488769F0083B63A /* SwiftyCMSDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FEB2488769F0083B63A /* SwiftyCMSDecoder.swift */; };
+		710C8007248876FD0083B63A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710C7FF3248876C90083B63A /* Cocoa.framework */; };
+		710C800A248876FD0083B63A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710C8009248876FD0083B63A /* Media.xcassets */; };
+		710C800C248876FD0083B63A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 710C800B248876FD0083B63A /* icon.icns */; };
+		710C800E248876FD0083B63A /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C800D248876FD0083B63A /* ActionRequestHandler.swift */; };
+		710C8013248876FD0083B63A /* Unsign File.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 710C8006248876FD0083B63A /* Unsign File.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		710C8017248877110083B63A /* SwiftyCMSDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FEB2488769F0083B63A /* SwiftyCMSDecoder.swift */; };
+		710C8018248877120083B63A /* SwiftyCMSDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FEB2488769F0083B63A /* SwiftyCMSDecoder.swift */; };
+		710C8019248877180083B63A /* SecurityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FE8248876820083B63A /* SecurityWrapper.swift */; };
+		710C801A248877180083B63A /* SecurityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FE8248876820083B63A /* SecurityWrapper.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		710C7FC92488764D0083B63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 710C7F9D248876320083B63A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 710C7FBB2488764D0083B63A;
+			remoteInfo = "Sign File";
+		};
+		710C8011248876FD0083B63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 710C7F9D248876320083B63A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 710C8005248876FD0083B63A;
+			remoteInfo = "Unsign File";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		710C7FCF2488764D0083B63A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				710C7FCB2488764D0083B63A /* Sign File.appex in Embed App Extensions */,
+				710C8013248876FD0083B63A /* Unsign File.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		710C7FA5248876320083B63A /* Signing Pal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signing Pal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +69,22 @@
 		710C7FAF248876330083B63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		710C7FB1248876330083B63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		710C7FB2248876330083B63A /* Signing_Pal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Signing_Pal.entitlements; sourceTree = "<group>"; };
+		710C7FBC2488764D0083B63A /* Sign File.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sign File.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		710C7FBE2488764D0083B63A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		710C7FC02488764D0083B63A /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		710C7FC22488764D0083B63A /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		710C7FC52488764D0083B63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ActionViewController.xib; sourceTree = "<group>"; };
+		710C7FC72488764D0083B63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		710C7FC82488764D0083B63A /* Sign_File.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sign_File.entitlements; sourceTree = "<group>"; };
+		710C7FE8248876820083B63A /* SecurityWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityWrapper.swift; sourceTree = "<group>"; };
+		710C7FEB2488769F0083B63A /* SwiftyCMSDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCMSDecoder.swift; sourceTree = "<group>"; };
+		710C7FF3248876C90083B63A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		710C8006248876FD0083B63A /* Unsign File.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unsign File.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		710C8009248876FD0083B63A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		710C800B248876FD0083B63A /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		710C800D248876FD0083B63A /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		710C800F248876FD0083B63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		710C8010248876FD0083B63A /* Unsign_File.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Unsign_File.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +95,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		710C7FB92488764D0083B63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710C8003248876FD0083B63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710C8007248876FD0083B63A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				710C7FA7248876320083B63A /* Signing Pal */,
+				710C7FBD2488764D0083B63A /* Sign File */,
+				710C8008248876FD0083B63A /* Unsign File */,
+				710C7FF2248876C90083B63A /* Frameworks */,
 				710C7FA6248876320083B63A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				710C7FA5248876320083B63A /* Signing Pal.app */,
+				710C7FBC2488764D0083B63A /* Sign File.appex */,
+				710C8006248876FD0083B63A /* Unsign File.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,14 +137,65 @@
 		710C7FA7248876320083B63A /* Signing Pal */ = {
 			isa = PBXGroup;
 			children = (
-				710C7FA8248876320083B63A /* AppDelegate.swift */,
-				710C7FAA248876320083B63A /* ViewController.swift */,
+				710C7FEA248876930083B63A /* External */,
+				710C7FE7248876700083B63A /* Source */,
 				710C7FAC248876330083B63A /* Assets.xcassets */,
 				710C7FAE248876330083B63A /* Main.storyboard */,
 				710C7FB1248876330083B63A /* Info.plist */,
 				710C7FB2248876330083B63A /* Signing_Pal.entitlements */,
 			);
 			path = "Signing Pal";
+			sourceTree = "<group>";
+		};
+		710C7FBD2488764D0083B63A /* Sign File */ = {
+			isa = PBXGroup;
+			children = (
+				710C7FBE2488764D0083B63A /* Media.xcassets */,
+				710C7FC02488764D0083B63A /* icon.icns */,
+				710C7FC22488764D0083B63A /* ActionViewController.swift */,
+				710C7FC42488764D0083B63A /* ActionViewController.xib */,
+				710C7FC72488764D0083B63A /* Info.plist */,
+				710C7FC82488764D0083B63A /* Sign_File.entitlements */,
+			);
+			path = "Sign File";
+			sourceTree = "<group>";
+		};
+		710C7FE7248876700083B63A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				710C7FA8248876320083B63A /* AppDelegate.swift */,
+				710C7FAA248876320083B63A /* ViewController.swift */,
+				710C7FE8248876820083B63A /* SecurityWrapper.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		710C7FEA248876930083B63A /* External */ = {
+			isa = PBXGroup;
+			children = (
+				710C7FEB2488769F0083B63A /* SwiftyCMSDecoder.swift */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		710C7FF2248876C90083B63A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				710C7FF3248876C90083B63A /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		710C8008248876FD0083B63A /* Unsign File */ = {
+			isa = PBXGroup;
+			children = (
+				710C8009248876FD0083B63A /* Media.xcassets */,
+				710C800B248876FD0083B63A /* icon.icns */,
+				710C800D248876FD0083B63A /* ActionRequestHandler.swift */,
+				710C800F248876FD0083B63A /* Info.plist */,
+				710C8010248876FD0083B63A /* Unsign_File.entitlements */,
+			);
+			path = "Unsign File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,15 +208,52 @@
 				710C7FA1248876320083B63A /* Sources */,
 				710C7FA2248876320083B63A /* Frameworks */,
 				710C7FA3248876320083B63A /* Resources */,
+				710C7FCF2488764D0083B63A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				710C7FCA2488764D0083B63A /* PBXTargetDependency */,
+				710C8012248876FD0083B63A /* PBXTargetDependency */,
 			);
 			name = "Signing Pal";
 			productName = "Signing Pal";
 			productReference = 710C7FA5248876320083B63A /* Signing Pal.app */;
 			productType = "com.apple.product-type.application";
+		};
+		710C7FBB2488764D0083B63A /* Sign File */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 710C7FCC2488764D0083B63A /* Build configuration list for PBXNativeTarget "Sign File" */;
+			buildPhases = (
+				710C7FB82488764D0083B63A /* Sources */,
+				710C7FB92488764D0083B63A /* Frameworks */,
+				710C7FBA2488764D0083B63A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sign File";
+			productName = "Sign File";
+			productReference = 710C7FBC2488764D0083B63A /* Sign File.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		710C8005248876FD0083B63A /* Unsign File */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 710C8014248876FD0083B63A /* Build configuration list for PBXNativeTarget "Unsign File" */;
+			buildPhases = (
+				710C8002248876FD0083B63A /* Sources */,
+				710C8003248876FD0083B63A /* Frameworks */,
+				710C8004248876FD0083B63A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unsign File";
+			productName = "Unsign File";
+			productReference = 710C8006248876FD0083B63A /* Unsign File.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +266,12 @@
 				ORGANIZATIONNAME = Pirklator;
 				TargetAttributes = {
 					710C7FA4248876320083B63A = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					710C7FBB2488764D0083B63A = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					710C8005248876FD0083B63A = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -112,6 +290,8 @@
 			projectRoot = "";
 			targets = (
 				710C7FA4248876320083B63A /* Signing Pal */,
+				710C7FBB2488764D0083B63A /* Sign File */,
+				710C8005248876FD0083B63A /* Unsign File */,
 			);
 		};
 /* End PBXProject section */
@@ -126,6 +306,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		710C7FBA2488764D0083B63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710C7FBF2488764D0083B63A /* Media.xcassets in Resources */,
+				710C7FC12488764D0083B63A /* icon.icns in Resources */,
+				710C7FC62488764D0083B63A /* ActionViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710C8004248876FD0083B63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710C800A248876FD0083B63A /* Media.xcassets in Resources */,
+				710C800C248876FD0083B63A /* icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -133,12 +332,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710C7FEC2488769F0083B63A /* SwiftyCMSDecoder.swift in Sources */,
 				710C7FAB248876320083B63A /* ViewController.swift in Sources */,
+				710C7FE9248876820083B63A /* SecurityWrapper.swift in Sources */,
 				710C7FA9248876320083B63A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		710C7FB82488764D0083B63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710C8018248877120083B63A /* SwiftyCMSDecoder.swift in Sources */,
+				710C801A248877180083B63A /* SecurityWrapper.swift in Sources */,
+				710C7FC32488764D0083B63A /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710C8002248876FD0083B63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710C8017248877110083B63A /* SwiftyCMSDecoder.swift in Sources */,
+				710C8019248877180083B63A /* SecurityWrapper.swift in Sources */,
+				710C800E248876FD0083B63A /* ActionRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		710C7FCA2488764D0083B63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 710C7FBB2488764D0083B63A /* Sign File */;
+			targetProxy = 710C7FC92488764D0083B63A /* PBXContainerItemProxy */;
+		};
+		710C8012248876FD0083B63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 710C8005248876FD0083B63A /* Unsign File */;
+			targetProxy = 710C8011248876FD0083B63A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		710C7FAE248876330083B63A /* Main.storyboard */ = {
@@ -147,6 +381,14 @@
 				710C7FAF248876330083B63A /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		710C7FC42488764D0083B63A /* ActionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				710C7FC52488764D0083B63A /* Base */,
+			);
+			name = ActionViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -268,6 +510,7 @@
 		710C7FB6248876330083B63A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Signing Pal/Signing_Pal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +531,7 @@
 		710C7FB7248876330083B63A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Signing Pal/Signing_Pal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +545,90 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		710C7FCD2488764D0083B63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Sign File/Sign_File.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U6L73Q3H3V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Sign File/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal.Sign-File";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		710C7FCE2488764D0083B63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Sign File/Sign_File.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U6L73Q3H3V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Sign File/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal.Sign-File";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		710C8015248876FD0083B63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Unsign File/Unsign_File.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U6L73Q3H3V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Unsign File/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal.Unsign-File";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		710C8016248876FD0083B63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Unsign File/Unsign_File.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U6L73Q3H3V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Unsign File/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal.Unsign-File";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -322,6 +650,24 @@
 			buildConfigurations = (
 				710C7FB6248876330083B63A /* Debug */,
 				710C7FB7248876330083B63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		710C7FCC2488764D0083B63A /* Build configuration list for PBXNativeTarget "Sign File" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710C7FCD2488764D0083B63A /* Debug */,
+				710C7FCE2488764D0083B63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		710C8014248876FD0083B63A /* Build configuration list for PBXNativeTarget "Unsign File" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710C8015248876FD0083B63A /* Debug */,
+				710C8016248876FD0083B63A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
