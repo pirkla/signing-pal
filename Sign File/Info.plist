@@ -8,8 +8,6 @@
 	<string>Sign File</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIconFile</key>
-	<string>icon</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -43,13 +41,15 @@
 			<key>NSExtensionServiceAllowsTouchBarItem</key>
 			<true/>
 			<key>NSExtensionServiceFinderPreviewIconName</key>
-			<string>NSActionTemplate</string>
+			<string>AppIcon-2</string>
 			<key>NSExtensionServiceRoleType</key>
 			<string>NSExtensionServiceRoleTypeEditor</string>
+			<key>NSExtensionServiceToolbarIconFile</key>
+			<string>AppIcon-2</string>
 			<key>NSExtensionServiceTouchBarBezelColorName</key>
 			<string>TouchBarBezel</string>
 			<key>NSExtensionServiceTouchBarIconName</key>
-			<string>NSActionTemplate</string>
+			<string>AppIcon-2</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.ui-services</string>

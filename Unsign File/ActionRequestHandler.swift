@@ -15,23 +15,19 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
                 
         precondition(context.inputItems.count == 1)
         guard let inputItem = context.inputItems[0] as? NSExtensionItem else {
-            context.cancelRequest(withError: NSError(domain: "Expected an extension item", code: 0, userInfo: nil))
             preconditionFailure("Expected an extension item")
         }
 
         guard let inputAttachments = inputItem.attachments else {
-            context.cancelRequest(withError:  NSError(domain: "Expected a valid array of attachments", code: 0, userInfo: nil))
             preconditionFailure("Expected a valid array of attachments")
         }
         if inputAttachments.isEmpty {
-            context.cancelRequest(withError:  NSError(domain: "Expected at least one attachment", code: 0, userInfo: nil))
             preconditionFailure("Expected at least one attachment")
         }
-//        var outputAttachments: [NSItemProvider] = inputAttachments
+
         var outputAttachments: [NSItemProvider] = []
 
         let dispatchGroup = DispatchGroup()
-
 
         for attachment in inputAttachments {
             dispatchGroup.enter()
@@ -45,7 +41,6 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
                 } else if let error = error {
                     print(error)
                 } else {
-                    context.cancelRequest(withError:  NSError(domain: "Expected either a valid URL or an error.", code: 0, userInfo: nil))
                     preconditionFailure("Expected either a valid URL or an error.")
                 }
 
@@ -69,12 +64,10 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
                 
                 
                 guard let data = try? Data(contentsOf: sourceUrl) else {
-                    context.cancelRequest(withError:  NSError(domain: "Data could not be read.", code: 0, userInfo: nil))
                     preconditionFailure("Data could not be read.")
                 }
 
                 guard let decoder = SwiftyCMSDecoder() else {
-                    context.cancelRequest(withError:  NSError(domain: "Decoder could not be created.", code: 0, userInfo: nil))
                     preconditionFailure("Decoder could not be created.")
                     
                 }
@@ -89,14 +82,12 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
                 }
                 
                 guard let fileUrl = try? self.fileUrl(for: sourceUrl) else {
-                    context.cancelRequest(withError:  NSError(domain: "File url could not be found.", code: 0, userInfo: nil))
                     preconditionFailure("File url could not be found.")
                 }
                 do {
                     try decodedData.write(to: fileUrl)
                 }
                 catch {
-                    context.cancelRequest(withError:  NSError(domain: "File could not be written.", code: 0, userInfo: nil))
                     preconditionFailure("File could not be written.")
                 }
                 completionHandler(fileUrl, false, nil)

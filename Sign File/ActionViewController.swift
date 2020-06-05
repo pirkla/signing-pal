@@ -42,16 +42,13 @@ class ActionViewController: NSViewController {
         
         precondition(context.inputItems.count == 1)
         guard let inputItem = context.inputItems[0] as? NSExtensionItem else {
-            context.cancelRequest(withError: NSError(domain: "Expected an extension item", code: 0, userInfo: nil))
             preconditionFailure("Expected an extension item")
         }
 
         guard let inputAttachments = inputItem.attachments else {
-            context.cancelRequest(withError:  NSError(domain: "Expected a valid array of attachments", code: 0, userInfo: nil))
             preconditionFailure("Expected a valid array of attachments")
         }
         if inputAttachments.isEmpty {
-            context.cancelRequest(withError:  NSError(domain: "Expected at least one attachment", code: 0, userInfo: nil))
             preconditionFailure("Expected at least one attachment")
         }
         // This extension is replacing the input attachments so start with an empty array.
@@ -70,7 +67,6 @@ class ActionViewController: NSViewController {
                 } else if let error = error {
                     print(error)
                 } else {
-                    context.cancelRequest(withError:  NSError(domain: "Expected either a valid URL or an error.", code: 0, userInfo: nil))
                     preconditionFailure("Expected either a valid URL or an error.")
                 }
 
@@ -83,10 +79,19 @@ class ActionViewController: NSViewController {
                 else { return }
             let outputItem = NSExtensionItem()
             outputItem.attachments = outputAttachments
-            context.completeRequest(returningItems: [outputItem], completionHandler: nil)
+            context.completeRequest(returningItems: [outputItem], completionHandler: self.RequestCompletion)
+            
         }
     }
-
+    
+    func RequestCompletion(_ expired: Bool) {
+        if expired {
+            let cancelError = NSError(domain: "Task interrupted", code: 0, userInfo: nil)
+            self.extensionContext?.cancelRequest(withError: cancelError)
+        }
+    }
+    
+    
     @IBAction func cancel(_ sender: AnyObject?) {
         let cancelError = NSError(domain: NSCocoaErrorDomain, code: NSUserCancelledError, userInfo: nil)
         self.extensionContext?.cancelRequest(withError: cancelError)
@@ -101,7 +106,6 @@ class ActionViewController: NSViewController {
             return itemReplacementDirectory.appendingPathComponent(filename)
         } catch {
             print(error)
-            self.extensionContext?.cancelRequest(withError:  NSError(domain: "Could not find file url", code: 0, userInfo: nil))
             preconditionFailure()
         }
     }
@@ -114,28 +118,23 @@ class ActionViewController: NSViewController {
                 [weak self]
                 completionHandler in
                 guard let data = try? Data(contentsOf: sourceUrl) else {
-                    context.cancelRequest(withError:  NSError(domain: "Data could not be read.", code: 0, userInfo: nil))
                     preconditionFailure("Data could not be read.")
                 }
                 guard let signingId = ((self?.SigningIdPopUp.selectedItem?.representedObject) as! SecIdentity?) else {
-                    context.cancelRequest(withError:  NSError(domain: "Security Identity could not be found", code: 0, userInfo: nil))
                     preconditionFailure("Security Identity could not be found")
                 }
                 
                 guard let encodedData = try? SecurityWrapper.sign(data: data, using: signingId ) else {
-                    context.cancelRequest(withError:  NSError(domain: "Could not sign file.", code: 0, userInfo: nil))
                     preconditionFailure("Could not sign file")
                 }
                 
                 guard let fileUrl = self?.fileUrl(for: sourceUrl) else {
-                    context.cancelRequest(withError:  NSError(domain: "Could not find the file url.", code: 0, userInfo: nil))
                     preconditionFailure("Could not find the file url")
                 }
                 do {
                     try encodedData.write(to: fileUrl)
                 }
                 catch {
-                    context.cancelRequest(withError:  NSError(domain: "File could not be written.", code: 0, userInfo: nil))
                     preconditionFailure("File could not be written.")
                 }
                 completionHandler(fileUrl, false, nil)

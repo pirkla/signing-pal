@@ -80,7 +80,6 @@ struct SecurityWrapper {
         try execute { SecItemCopyMatching(dict, &result) }
         
         guard let secIdentities = result as? [SecIdentity] else { return [] }
-        print(secIdentities)
         
         return secIdentities.map({
             let name = try? getCertificateCommonName(for: $0)
