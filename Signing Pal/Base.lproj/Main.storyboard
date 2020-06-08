@@ -111,11 +111,7 @@
                                                 <action selector="runPageLayout:" target="Ady-hI-5gd" id="Din-rz-gC5"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
-                                            <connections>
-                                                <action selector="print:" target="Ady-hI-5gd" id="qaZ-4w-aoO"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS"/>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -663,7 +659,7 @@
                                     <items>
                                         <menuItem title="Signing Pal Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <segue destination="iHh-oY-NAu" kind="modal" id="LiP-DT-Ih4"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -710,15 +706,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="598" height="260"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-0P-Kw7">
-                                <rect key="frame" x="18" y="180" width="244" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Signing Pal" id="sKm-vX-Hk0">
-                                    <font key="font" size="36" name="Verdana"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPV-9C-xYr">
                                 <rect key="frame" x="11" y="130" width="111" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -787,6 +774,20 @@
                                     <segue destination="iHh-oY-NAu" kind="modal" id="2Rh-Xg-HMH"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xOZ-dR-dga">
+                                <rect key="frame" x="226" y="171" width="103" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="main" id="oAY-7F-npc"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-0P-Kw7">
+                                <rect key="frame" x="18" y="176" width="244" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Signing Pal" id="sKm-vX-Hk0">
+                                    <font key="font" size="36" name="Verdana"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -861,7 +862,11 @@
             <point key="canvasLocation" x="885" y="858"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Rh-Xg-HMH"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="main" width="512" height="512"/>
         <image name="quickAction" width="1032" height="732"/>
         <image name="sysPref1" width="1336" height="1012"/>
         <image name="sysPref2" width="1336" height="1016"/>

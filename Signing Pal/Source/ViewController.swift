@@ -14,15 +14,25 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var SigningIdentityPopup: NSPopUpButton!
     
+    @IBAction func openDocument(_ sender: Any) {
+        ChooseDirectoryButton(sender)
+    }
+//    @IBAction func showHelp(_ sender: Any) {
+//        
+//    }
+    
     @IBAction func UnsignButton(_ sender: Any) {
         guard let myUrl = path else {
+            showAlert(SigningPalError.noUrlFound, for: self.view.window)
             return
         }
         guard let data = try? Data(contentsOf: myUrl) else {
+            showAlert(SigningPalError.noDataFound, for: self.view.window)
             return
         }
 
         guard let decoder = SwiftyCMSDecoder() else {
+            showAlert(SigningPalError.decoderNotCreated, for: self.view.window)
             return
             
         }
@@ -35,47 +45,41 @@ class ViewController: NSViewController {
         if let xml = try? XMLDocument.init(data: decodedData, options: .nodePrettyPrint) {
             decodedData = xml.xmlData(options:.nodePrettyPrint)
         }
-        
-//        guard let fileUrl = try? self.fileUrl(for: myUrl) else {
-//            preconditionFailure("File url could not be found.")
-//        }
         do {
             try decodedData.write(to: myUrl)
             NSWorkspace.shared.activateFileViewerSelecting([myUrl])
         }
         catch {
-            print("Error: \(error)")
-            preconditionFailure("File could not be written.")
+            showAlert(SigningPalError.fileNotWritten(description: error.localizedDescription), for: self.view.window)
+            print(error)
         }
     }
     
     @IBAction func SignButton(_ sender: Any) {
         guard let myUrl = path else {
+            showAlert(SigningPalError.noUrlFound, for: self.view.window)
             return
         }
         guard let data = try? Data(contentsOf: myUrl) else {
-            preconditionFailure("Data could not be read.")
+            showAlert(SigningPalError.noDataFound, for: self.view.window)
+            return
         }
         guard let signingId = ((SigningIdentityPopup.selectedItem?.representedObject) as! SecIdentity?) else {
-            preconditionFailure("Security Identity could not be found")
+            showAlert(SigningPalError.noSigningId, for: self.view.window)
+            return
         }
         
         guard let encodedData = try? SecurityWrapper.sign(data: data, using: signingId ) else {
-            preconditionFailure("Could not sign file")
+            showAlert(SigningPalError.signFailed, for: self.view.window)
+            return
         }
         do {
             try encodedData.write(to: myUrl)
             NSWorkspace.shared.activateFileViewerSelecting([myUrl])
         }
         catch {
-            preconditionFailure("File could not be written.")
+            showAlert(SigningPalError.fileNotWritten(description: error.localizedDescription), for: self.view.window)
         }
-//        print(SigningIdentityPopup.selectedItem?.representedObject)
-    }
-    
-    @IBAction func SysPrefButton(_ sender: Any) {
-        let myUrl = URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane")
-        NSWorkspace.shared.open(myUrl)
     }
     
     @IBAction func ChooseDirectoryButton(_ sender: Any) {
@@ -90,9 +94,6 @@ class ViewController: NSViewController {
         }
             
         else {
-            if let window = self.view.window {
-                showAlert(SigningPalError.noUrlFound, for: window)
-            }
             return
         }
     }
@@ -124,21 +125,17 @@ class ViewController: NSViewController {
         }
     }
 
-    fileprivate func showAlert(_ error: LocalizedError, for window: NSWindow) {
+    fileprivate func showAlert(_ error: LocalizedError, for window: NSWindow?) {
+        guard let myWindow = window else {
+            return
+        }
         let alertWindow: NSAlert = NSAlert()
         alertWindow.messageText = "Operation Failed"
         alertWindow.informativeText = error.errorDescription ?? "An unknown error occurred."
         alertWindow.addButton(withTitle: "OK")
         alertWindow.alertStyle = .warning
-        alertWindow.beginSheetModal(for: window)
+        alertWindow.beginSheetModal(for: myWindow)
     }
     
-//    func fileUrl(for sourceUrl: URL)throws -> URL {
-//        let itemReplacementDirectory = try FileManager.default.url(
-//            for: .itemReplacementDirectory, in: .userDomainMask,
-//            appropriateFor: URL(fileURLWithPath: NSHomeDirectory()), create: true)
-//        let filename = "unsigned_" + sourceUrl.lastPathComponent
-//        return itemReplacementDirectory.appendingPathComponent(filename)
-//    }
 }
 

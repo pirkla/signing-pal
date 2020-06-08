@@ -11,8 +11,9 @@ import Cocoa
 
 class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
     
+    var myContext: NSExtensionContext?
     func beginRequest(with context: NSExtensionContext) {
-                
+        myContext = context
         precondition(context.inputItems.count == 1)
         guard let inputItem = context.inputItems[0] as? NSExtensionItem else {
             preconditionFailure("Expected an extension item")
@@ -51,7 +52,7 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         dispatchGroup.notify(queue: DispatchQueue.main) {
             let outputItem = NSExtensionItem()
             outputItem.attachments = outputAttachments
-            context.completeRequest(returningItems: [outputItem], completionHandler: nil)
+            context.completeRequest(returningItems: [outputItem], completionHandler: self.RequestCompletion)
         }
     }
     
@@ -104,4 +105,11 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         let filename = "unsigned_" + sourceUrl.lastPathComponent
         return itemReplacementDirectory.appendingPathComponent(filename)
     }
+    fileprivate func RequestCompletion(_ expired: Bool) {
+        if expired {
+            let cancelError = NSError(domain: "Task interrupted", code: 0, userInfo: nil)
+            myContext?.cancelRequest(withError: cancelError)
+        }
+    }
+    
 }
