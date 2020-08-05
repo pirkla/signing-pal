@@ -29,6 +29,12 @@
 		71B290B02489D0C70077CC59 /* SigningPalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B290AF2489D0C70077CC59 /* SigningPalError.swift */; };
 		71B290B4248A05CB0077CC59 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B290B3248A05CB0077CC59 /* HelpViewController.swift */; };
 		71EEB775248995F6001A8372 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710C7FBE2488764D0083B63A /* Media.xcassets */; };
+		71FBF50C24DB4A9600CFEF3F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710C7FF3248876C90083B63A /* Cocoa.framework */; };
+		71FBF50F24DB4A9600CFEF3F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71FBF50E24DB4A9600CFEF3F /* Media.xcassets */; };
+		71FBF51324DB4A9600CFEF3F /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF51224DB4A9600CFEF3F /* ActionRequestHandler.swift */; };
+		71FBF51824DB4A9600CFEF3F /* Copy base64.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 71FBF50B24DB4A9600CFEF3F /* Copy base64.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		71FBF51C24DB4C0700CFEF3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710C7FAC248876330083B63A /* Assets.xcassets */; };
+		71FBF51D24DB510000CFEF3F /* SwiftyCMSDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C7FEB2488769F0083B63A /* SwiftyCMSDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,13 @@
 			remoteGlobalIDString = 710C8005248876FD0083B63A;
 			remoteInfo = "Unsign File";
 		};
+		71FBF51624DB4A9600CFEF3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 710C7F9D248876320083B63A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71FBF50A24DB4A9600CFEF3F;
+			remoteInfo = "Copy base64";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +70,7 @@
 			files = (
 				710C7FCB2488764D0083B63A /* Sign File.appex in Embed App Extensions */,
 				710C8013248876FD0083B63A /* Unsign File.appex in Embed App Extensions */,
+				71FBF51824DB4A9600CFEF3F /* Copy base64.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +101,11 @@
 		710C8010248876FD0083B63A /* Unsign_File.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Unsign_File.entitlements; sourceTree = "<group>"; };
 		71B290AF2489D0C70077CC59 /* SigningPalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningPalError.swift; sourceTree = "<group>"; };
 		71B290B3248A05CB0077CC59 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		71FBF50B24DB4A9600CFEF3F /* Copy base64.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Copy base64.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71FBF50E24DB4A9600CFEF3F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		71FBF51224DB4A9600CFEF3F /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		71FBF51424DB4A9600CFEF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71FBF51524DB4A9600CFEF3F /* Copy_base64.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Copy_base64.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +131,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71FBF50824DB4A9600CFEF3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71FBF50C24DB4A9600CFEF3F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -121,6 +148,7 @@
 				710C7FA7248876320083B63A /* Signing Pal */,
 				710C7FBD2488764D0083B63A /* Sign File */,
 				710C8008248876FD0083B63A /* Unsign File */,
+				71FBF50D24DB4A9600CFEF3F /* Copy base64 */,
 				710C7FF2248876C90083B63A /* Frameworks */,
 				710C7FA6248876320083B63A /* Products */,
 			);
@@ -132,6 +160,7 @@
 				710C7FA5248876320083B63A /* Signing Pal.app */,
 				710C7FBC2488764D0083B63A /* Sign File.appex */,
 				710C8006248876FD0083B63A /* Unsign File.appex */,
+				71FBF50B24DB4A9600CFEF3F /* Copy base64.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +229,17 @@
 			path = "Unsign File";
 			sourceTree = "<group>";
 		};
+		71FBF50D24DB4A9600CFEF3F /* Copy base64 */ = {
+			isa = PBXGroup;
+			children = (
+				71FBF50E24DB4A9600CFEF3F /* Media.xcassets */,
+				71FBF51224DB4A9600CFEF3F /* ActionRequestHandler.swift */,
+				71FBF51424DB4A9600CFEF3F /* Info.plist */,
+				71FBF51524DB4A9600CFEF3F /* Copy_base64.entitlements */,
+			);
+			path = "Copy base64";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,6 +257,7 @@
 			dependencies = (
 				710C7FCA2488764D0083B63A /* PBXTargetDependency */,
 				710C8012248876FD0083B63A /* PBXTargetDependency */,
+				71FBF51724DB4A9600CFEF3F /* PBXTargetDependency */,
 			);
 			name = "Signing Pal";
 			productName = "Signing Pal";
@@ -257,13 +298,30 @@
 			productReference = 710C8006248876FD0083B63A /* Unsign File.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		71FBF50A24DB4A9600CFEF3F /* Copy base64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71FBF51B24DB4A9600CFEF3F /* Build configuration list for PBXNativeTarget "Copy base64" */;
+			buildPhases = (
+				71FBF50724DB4A9600CFEF3F /* Sources */,
+				71FBF50824DB4A9600CFEF3F /* Frameworks */,
+				71FBF50924DB4A9600CFEF3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Copy base64";
+			productName = "Copy base64";
+			productReference = 71FBF50B24DB4A9600CFEF3F /* Copy base64.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		710C7F9D248876320083B63A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Pirklator;
 				TargetAttributes = {
@@ -275,6 +333,9 @@
 					};
 					710C8005248876FD0083B63A = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					71FBF50A24DB4A9600CFEF3F = {
+						CreatedOnToolsVersion = 11.6;
 					};
 				};
 			};
@@ -294,6 +355,7 @@
 				710C7FA4248876320083B63A /* Signing Pal */,
 				710C7FBB2488764D0083B63A /* Sign File */,
 				710C8005248876FD0083B63A /* Unsign File */,
+				71FBF50A24DB4A9600CFEF3F /* Copy base64 */,
 			);
 		};
 /* End PBXProject section */
@@ -324,6 +386,15 @@
 			files = (
 				71B290AE2489ABA10077CC59 /* Assets.xcassets in Resources */,
 				71B290A92489A1730077CC59 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71FBF50924DB4A9600CFEF3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71FBF51C24DB4C0700CFEF3F /* Assets.xcassets in Resources */,
+				71FBF50F24DB4A9600CFEF3F /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +434,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71FBF50724DB4A9600CFEF3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71FBF51D24DB510000CFEF3F /* SwiftyCMSDecoder.swift in Sources */,
+				71FBF51324DB4A9600CFEF3F /* ActionRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -375,6 +455,11 @@
 			isa = PBXTargetDependency;
 			target = 710C8005248876FD0083B63A /* Unsign File */;
 			targetProxy = 710C8011248876FD0083B63A /* PBXContainerItemProxy */;
+		};
+		71FBF51724DB4A9600CFEF3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71FBF50A24DB4A9600CFEF3F /* Copy base64 */;
+			targetProxy = 71FBF51624DB4A9600CFEF3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -524,7 +609,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5B77FF9LPA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Signing Pal/Info.plist";
@@ -532,7 +617,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -548,7 +633,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5B77FF9LPA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Signing Pal/Info.plist";
@@ -556,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -661,6 +746,54 @@
 			};
 			name = Release;
 		};
+		71FBF51924DB4A9600CFEF3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_ENTITLEMENTS = "Copy base64/Copy_base64.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5B77FF9LPA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Copy base64/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal.Copy-base64";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		71FBF51A24DB4A9600CFEF3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_ENTITLEMENTS = "Copy base64/Copy_base64.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5B77FF9LPA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Copy base64/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pirklator.Signing-Pal.Copy-base64";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -696,6 +829,15 @@
 			buildConfigurations = (
 				710C8015248876FD0083B63A /* Debug */,
 				710C8016248876FD0083B63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71FBF51B24DB4A9600CFEF3F /* Build configuration list for PBXNativeTarget "Copy base64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71FBF51924DB4A9600CFEF3F /* Debug */,
+				71FBF51A24DB4A9600CFEF3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
